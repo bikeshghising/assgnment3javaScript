@@ -1,0 +1,23 @@
+/* Basic page styling */
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+}
+
+/* Center the main title */
+h1 {
+    text-align: center;
+}
+
+/* Input field styling */
+#cityInput {
+    padding: 8px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+/* Simple button styling */
+button {
+    padding: 8px 15px;
+    cursor: pointer;
+}
