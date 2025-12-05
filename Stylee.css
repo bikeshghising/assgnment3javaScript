@@ -21,3 +21,10 @@ button {
     padding: 8px 15px;
     cursor: pointer;
 }
+
+/* Box where weather result will show */
+#result {
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px solid #c41919;
+}
