@@ -1,7 +1,7 @@
 // Read user input and store API key
 async function getWeather() {
     const city = document.getElementById("cityInput").value;
-    const apiKey = "";
+    const apiKey = "d2a65936efb5994cffb125c83024fe48";
     // If no city name entered, show a message
     if (city === "") {
         document.getElementById("result").innerHTML = "<p>Please enter a city.</p>";
