@@ -92,7 +92,7 @@ async function getForecast(city, apiKey) {
                 <p><strong>${temp}°C</strong></p>
                 <p>${desc}</p>
                 <img src="https://openweathermap.org/img/wn/${icon}.png">
-            q</div>
+            </div>
         `;
     }
 }
