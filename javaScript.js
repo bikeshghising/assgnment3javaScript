@@ -29,5 +29,18 @@ async function getWeather() {
     // Convert Unix time to readable time
     const sunrise = new Date(data.sys.sunrise * 1000).toLocaleTimeString();
     const sunset = new Date(data.sys.sunset * 1000).toLocaleTimeString();
+            
+    // Display weather result
+    document.getElementById("result").innerHTML = `
+        <h2>${data.name}</h2>
+        <p><strong>Temperature:</strong> ${temp}°C</p>
+        <p><strong>Weather:</strong> ${weather}</p>
+        <p><strong>Humidity:</strong> ${humidity}%</p>
+        <p><strong>Wind Speed:</strong> ${wind} m/s</p>
+        <p><strong>Sunrise:</strong> ${sunrise}</p>
+        <p><strong>Sunset:</strong> ${sunset}</p>
+        <img src="https://openweathermap.org/img/wn/${icon}@2x.png">
+        `;
+
 
 }
