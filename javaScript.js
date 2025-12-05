@@ -85,6 +85,15 @@ async function getForecast(city, apiKey) {
         const desc = dayData.weather[0].description;
         const icon = dayData.weather[0].icon;
 
+        // Add forecast card to page
+        document.getElementById("forecast").innerHTML += `
+            <div class="forecast-card">
+                <h3>${dayName}</h3>
+                <p><strong>${temp}°C</strong></p>
+                <p>${desc}</p>
+                <img src="https://openweathermap.org/img/wn/${icon}.png">
+            q</div>
+        `;
+    }
+}
 
-}
-}
