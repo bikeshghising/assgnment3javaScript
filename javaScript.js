@@ -19,4 +19,15 @@ async function getWeather() {
         document.getElementById("result").innerHTML = `<p>Error: ${data.message}</p>`;
         return;
     }
+    // Extract needed fields
+    const temp = data.main.temp;
+    const weather = data.weather[0].description;
+    const humidity = data.main.humidity;
+    const wind = data.wind.speed;
+    const icon = data.weather[0].icon;
+
+    // Convert Unix time to readable time
+    const sunrise = new Date(data.sys.sunrise * 1000).toLocaleTimeString();
+    const sunset = new Date(data.sys.sunset * 1000).toLocaleTimeString();
+
 }
