@@ -71,6 +71,20 @@ async function getForecast(city, apiKey) {
     // Clear previous forecast
     document.getElementById("forecast").innerHTML = "";
 
+    const list = data.list;
+
+    // Loop through every 8th entry (one per day)
+    for (let i = 0; i < list.length; i += 8) {
+        const dayData = list[i];
+
+        // Convert timestamp → day of week
+        const date = new Date(dayData.dt * 1000);
+        const dayName = date.toLocaleDateString("en-US", { weekday: "long" });
+
+        const temp = dayData.main.temp;
+        const desc = dayData.weather[0].description;
+        const icon = dayData.weather[0].icon;
 
 
+}
 }
