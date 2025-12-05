@@ -19,6 +19,9 @@ async function getWeather() {
         document.getElementById("result").innerHTML = `<p>Error: ${data.message}</p>`;
         return;
     }
+    
+    console.log(data);
+
     // Extract needed fields
     const temp = data.main.temp;
     const weather = data.weather[0].description;
@@ -41,6 +44,13 @@ async function getWeather() {
         <p><strong>Sunset:</strong> ${sunset}</p>
         <img src="https://openweathermap.org/img/wn/${icon}@2x.png">
         `;
+    // Load 5-day forecast
+    getForecast(city, apiKey);
 
-
+    } catch (error) {
+        document.getElementById("result").innerHTML = "<p>Failed to fetch data.</p>";
+    }
 }
+
+
+
