@@ -19,7 +19,7 @@ async function getWeather() {
         document.getElementById("result").innerHTML = `<p>Error: ${data.message}</p>`;
         return;
     }
-    
+
     console.log(data);
 
     // Extract needed fields
@@ -52,5 +52,25 @@ async function getWeather() {
     }
 }
 
+// Function to load 5-day forecast
+async function getForecast(city, apiKey) {
+
+    // Forecast API URL
+    const url = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=metric&appid=${apiKey}`;
+
+    // Fetch forecast data
+    const response = await fetch(url);
+    const data = await response.json();
+
+    // Show message if forecast is unavailable
+    if (data.cod !== "200") {
+        document.getElementById("forecast").innerHTML = "<p>Forecast not available.</p>";
+        return;
+    }
+
+    // Clear previous forecast
+    document.getElementById("forecast").innerHTML = "";
 
 
+
+}
